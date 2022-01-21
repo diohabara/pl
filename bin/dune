@@ -1,0 +1,6 @@
+(executable
+ (public_name pl)
+ (name main)
+ (libraries pl core)
+ (preprocess
+  (pps ppx_inline_test)))

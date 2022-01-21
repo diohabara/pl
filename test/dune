@@ -1,0 +1,5 @@
+(test
+ (name pl)
+ (libraries core)
+ (preprocess
+  (pps ppx_inline_test)))
