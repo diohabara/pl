@@ -13,6 +13,13 @@ let%expect_test "addition" =
   [%expect {| 77 |}]
 ;;
 
+let%expect_test "subtraction" =
+  interp "33-44" |> print_endline;
+  [%expect {| -11 |}];
+  interp "100 - 111" |> print_endline;
+  [%expect {| -11 |}]
+;;
+
 let%expect_test "multiplication" =
   interp "2*2" |> print_endline;
   [%expect {| 4 |}];
@@ -26,7 +33,16 @@ let%expect_test "multiplication" =
 
 let%expect_test "paranthesize" =
   interp "2 * (10 + 5)" |> print_endline;
-  [%expect{| 30 |}];
+  [%expect {| 30 |}];
   interp "(30 + 1) * 3" |> print_endline;
-  [%expect{| 93 |}]
+  [%expect {| 93 |}]
+;;
+
+let%expect_test "division" =
+  interp "10 / 5" |> print_endline;
+  [%expect {| 2 |}];
+  interp "11 / 3" |> print_endline;
+  [%expect {| 3 |}];
+  interp "11 % 3" |> print_endline;
+  [%expect {| 2 |}]
 ;;

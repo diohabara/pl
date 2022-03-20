@@ -33,7 +33,10 @@ let rec step : expr -> expr = function
 and step_bop bop e1 e2 =
   match bop, e1, e2 with
   | Add, Int a, Int b -> Int (a + b)
+  | Minus, Int a, Int b -> Int (a - b)
   | Mult, Int a, Int b -> Int (a * b)
+  | Div, Int a, Int b -> Int (a / b)
+  | Mod, Int a, Int b -> Int (a mod b)
   | _ -> failwith "precondition violated"
 ;;
 
