@@ -1,6 +1,8 @@
 %token <int> INT
 %token PLUS
 %token MULT
+%token LPAREN
+%token RPAREN
 %token EOF
 
 // lower precedence
@@ -20,4 +22,5 @@ expr:
   | i = INT { Ast.Int i }
   | e1 = expr; PLUS; e2 = expr { Ast.Binop (Ast.Add, e1, e2) }
   | e1 = expr; MULT; e2 = expr { Ast.Binop (Ast.Mult, e1, e2) }
+  | LPAREN; e = expr; RPAREN { e }
   ;
