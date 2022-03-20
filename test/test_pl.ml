@@ -7,3 +7,8 @@ let%expect_test "integer" =
   interp "-22" |> print_endline;
   [%expect {| -22 |}]
 ;;
+
+let%expect_test "addition" =
+  interp "33+44" |> print_endline;
+  [%expect{| 77 |}]
+;;
