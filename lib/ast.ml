@@ -1,1 +1,1 @@
-type expr = unit
+type expr = Int of int
