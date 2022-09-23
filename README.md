@@ -7,6 +7,7 @@ a reference language for my blog.
 ```bash
 opam switch create . ocaml-base-compiler
 eval $(opam env)
+opam install . --deps-only
 ```
 
 ## test
